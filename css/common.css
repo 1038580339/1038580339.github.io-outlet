@@ -2,9 +2,9 @@
 body{
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     margin: 0 auto;
-
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 
 .header{
