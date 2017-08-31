@@ -2,8 +2,12 @@
     margin: 0 auto;
     width: 1000px;
     /*background-color: black*/
-    border-left: solid 1px aliceblue;
-    border-right:solid 1px aliceblue;
+    /*border-left: solid 1px aliceblue;
+    border-right:solid 1px aliceblue;*/
+    border: solid 2px #d2910f;
+}
+.top{
+  margin-left: 30px;
 }
 ul{
     height: 37px;
@@ -18,6 +22,7 @@ li{
     height: 29px;
     text-align: center;
     padding-top: 8px;
+    cursor: pointer;
 }
 li:hover{
     background-color: darkturquoise;
@@ -30,6 +35,41 @@ li:hover{
 .content{
     width: 100%;
     height: 1000px;
-    border-left: solid thin aliceblue;
-    border-right: solid thin aliceblue;
+    /*border-left: solid thin aliceblue;
+    border-right: solid thin aliceblue;*/
+}
+.contentArticle{
+  width: 90%;
+  background-color: white;
+  margin: 40px 5%;
+  padding: 2px 2px;
+  /*padding-bottom: 20px;*/
+  box-shadow: 0 0 30px #4a4a4a;
+}
+.contentArticle img{
+  width: 100%;
+}
+.contentArticleTitle{
+  color:#343F4C;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+.contentArticleTime{
+  color: #4a4a4a;
+  opacity: 0.4;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.contentArticleLinkP{
+  text-align: right;
+  padding-right: 20px;
+}
+.contentArticleA{
+  color: #343F4C;
+  cursor: pointer;
+}
+.contentArticleLinkP img{
+  width: 12px;
+  cursor: pointer;
 }

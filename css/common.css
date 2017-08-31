@@ -1,6 +1,7 @@
 
 body{
-    background-image: url("../img/background.jpg");
+    /*background-image: url("../img/background.jpg");*/
+    background-color: floralwhite;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
