@@ -15,6 +15,8 @@
     <script src="http://7xio74.com2.z0.glb.qiniucdn.com/rem.js"></script>
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href='./js/video-js.css'/>
+    <script src='./js/video.min.js'></script>
     <!-- Demo styles -->
     <style>
     html, body {
@@ -225,24 +227,27 @@
       width: 4.5rem;
       /*margin-top: -0.5rem;*/
     }
-    video{
-      position: absolute;
+    .video{
+      position: fixed;
       width: 100%;
       height: 100%;
       top:0;
       left: 0;
+      z-index: 1;
+        background-color:#f08bb5;
     }
+
     </style>
 </head>
 <body>
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <video src='http://oww5jrsjw.bkt.clouddn.com/video.mov' style="width:100%;height:100%;" controls='controls' preload="auto"></video>
+        </div>
           <!-- 首页滑块 -->
           <div class="swiper-slide">
-            <video src="./img/video.mov" autoplay="autoplay" id="video">
-                您的浏览器不支持 video 标签。
-                </video>
             <img src='' style="width:100%;height:100%;" class="invite"/>
           </div>
 
@@ -323,13 +328,7 @@
     <!-- Initialize Swiper -->
     <script>
     //初始化创建动画
-     var isPlay=setInterval(function(){
-       if(document.getElementById("video").ended){
-         clearInterval(isPlay);
-         $('#video').remove();
-         $('.invite').attr('src','./img/invite.gif?'+(new Date)+"");
-       }
-     },100)
+    // $('.invite').attr('src','./img/invite.gif?'+(new Date)+"");
     var mySwiper = new Swiper ('.swiper-container', {
       // effect : 'coverflow',
       direction : 'vertical',
@@ -341,9 +340,9 @@
    },
    onSlideChangeEnd: function(swiper){
      swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-     if(swiper.activeIndex=='0'){
+     if(swiper.activeIndex=='1'){
        // console.log('是');
-       $('.invite').attr('src','./img/invite.gif?'+(new Date)+"");
+       $('.invite').attr('src','http://oww5jrsjw.bkt.clouddn.com/invite.gif?'+(new Date)+"");
      }else{
        // console.log('不是');
          $('.invite').attr('src','');
