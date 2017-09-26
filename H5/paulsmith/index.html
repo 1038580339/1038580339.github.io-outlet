@@ -225,6 +225,13 @@
       width: 4.5rem;
       /*margin-top: -0.5rem;*/
     }
+    video{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left: 0;
+    }
     </style>
 </head>
 <body>
@@ -233,7 +240,10 @@
         <div class="swiper-wrapper">
           <!-- 首页滑块 -->
           <div class="swiper-slide">
-            <img src='./img/invite.gif' style="width:100%;height:100%;" class="invite"/>
+            <video src="./img/video.mov" autoplay="autoplay" id="video">
+                您的浏览器不支持 video 标签。
+                </video>
+            <img src='' style="width:100%;height:100%;" class="invite"/>
           </div>
 
             <!-- 邀请信息滑块 -->
@@ -313,7 +323,13 @@
     <!-- Initialize Swiper -->
     <script>
     //初始化创建动画
-    // $('.invite').attr('src','./img/invite.gif?'+(new Date)+"");
+     var isPlay=setInterval(function(){
+       if(document.getElementById("video").ended){
+         clearInterval(isPlay);
+         $('#video').remove();
+         $('.invite').attr('src','./img/invite.gif?'+(new Date)+"");
+       }
+     },100)
     var mySwiper = new Swiper ('.swiper-container', {
       // effect : 'coverflow',
       direction : 'vertical',
